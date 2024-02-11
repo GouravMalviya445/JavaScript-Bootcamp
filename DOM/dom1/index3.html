@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul class="language">
+        <li>Java Script</li>
+
+    </ul>
+</body>
+    <script>
+        function addLanguage(lang){
+            let ul = document.querySelector(".language")
+            let li = document.createElement("li")
+            li.appendChild(document.createTextNode(lang))
+            ul.appendChild(li)
+        }
+        addLanguage("Phython")
+        addLanguage("Ruby")
+        addLanguage("Java")
+
+        let firstLang = document.querySelector("li:first-child")
+        firstLang.innerText = "Rust"
+        // firstLang.remove()
+    </script>
+</html>

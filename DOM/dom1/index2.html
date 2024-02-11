@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index2</title>
+</head>
+<body style="background-color: #212121; color:#fff;">
+
+</body>
+    <script>
+        let div = document.createElement("h1")
+        div.style.color = "orange"
+        div.className = "heading"
+        div.id = Math.round(Math.random()*10 + 1)
+        div.setAttribute("title", "Chai or code")
+        div.style.backgroundColor = "red"
+        let newText = document.createTextNode("Ram Ram Bhai Sab Ko Ajj ka Din Yaad to Rahega naa sabko")
+        div.appendChild(newText)
+        document.body.appendChild(div)
+        console.log(div)
+    </script>
+</html>

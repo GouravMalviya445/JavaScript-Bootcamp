@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li id="hlo1"><p>hello1</p></li>
+        <li id="hlo2"><p>hello2</p></li>
+        <li id="hlo3"><p>hello3</p></li>
+        <li id="hlo4"><p>hello4</p></li>
+        <li id="hlo5"><p>hello5</p></li>
+        <li id="hlo6"><p>hello6</p></li>
+        <li id="hlo7"><p>hello7</p></li>
+        <li id="hlo8"><p>hello8</p></li>
+        <li id="hlo9"><p>hello9</p></li>
+        <li><a href="https://www.google.com" id="google">google</a></li>
+    </ul>
+</body>
+    <script>
+        // need to learn :
+        // type, timeStamp, defaultPrevented
+        // target, toElement, srcElement, currentTarget,
+        // clientX, clientY, screenX, screenY
+        // altKey, ctrlKey, shiftKey, keyCode
+
+        // Event Propogation:
+        // false(default) -> event-bubbling(from inner to outer element)
+        // document.querySelector("ul").addEventListener("click",function(e){
+        //     console.log("Clicked inside ul")
+        // }, false)
+        // document.getElementById("hlo4").addEventListener("click",function(e){
+        //     console.log("clicked hlo4")
+        //     // e.stopPropagation(); // for stoping event propogation
+        // }, false)
+        
+        // true -> event-capturing (from outer to inner)
+        // document.querySelector("ul").addEventListener("click",function(e){
+        //     console.log("Clicked inside ul")
+        //     // e.stopPropagation(); // for stoping event propogation
+        // }, true)
+        // document.getElementById("hlo4").addEventListener("click",function(e){
+        //     console.log("clicked hlo4")
+        // }, true)
+        
+        // document.querySelector("ul").addEventListener("click",function(e){
+        //     console.log("Clicked inside ul")
+        //     // e.stopPropagation(); // for stoping event propogation
+        // }, false)
+        // document.getElementById("google").addEventListener("click",function(e){
+        //     e.preventDefault();
+        //     console.log("Google clicked")
+        //     e.stopPropagation();
+        // }, false)
+
+        document.querySelector("ul").addEventListener("click",function(e){
+            console.log(e.target.tagName)
+            if(e.target.tagName === 'P'){
+                console.log("yes")
+                let removeIt = e.target.parentNode;
+                removeIt.remove();
+            }
+        })
+    </script>
+</html>
